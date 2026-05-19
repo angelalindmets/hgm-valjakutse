@@ -542,23 +542,7 @@ section { position: relative; z-index: 1; }
   margin: 0 auto;
   position: relative;
 }
-.signup-input {
-  width: 100%;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  color: var(--cream);
-  font-family: var(--font-body);
-  font-size: 15px;
-  padding: 16px 20px;
-  border-radius: 100px;
-  outline: none;
-  transition: all 0.3s ease;
-}
-.signup-input::placeholder { color: rgba(250,247,242,0.35); }
-.signup-input:focus {
-  border-color: rgba(232,196,196,0.5);
-  background: rgba(255,255,255,0.12);
-}
+
 .btn-signup {
   width: 100%;
   background: var(--cream);
@@ -868,11 +852,8 @@ details[open] .faq-q::after { transform: rotate(45deg); }
   <div class="container" style="position:relative">
     <span class="signup-eyebrow">Liitu väljakutsega</span>
     <h2 class="signup-title">See on sinu<br><em>suvi.</em></h2>
-    <p class="signup-sub">Sisesta oma e-mail ja saad kohe lingi privaatsesse community gruppi. Tasuta. Ilma kohustuseta.</p>
     <div class="signup-form">
-      <input type="email" class="signup-input" placeholder="sinu@email.ee" />
-      <button class="btn-signup" onclick="handleSignup()">Liitu väljakutsega</button>
-      <p class="signup-disclaimer">Ainult väljakutse info. Rämpsposti nulliga.</p>
+      <a href="https://stan.store/AngelaLindmets/p/hot-girls-manifest-vljakutse" class="btn-signup" target="_blank">Liitu väljakutsega</a>
     </div>
     <div class="signup-urgency">
       <div class="urgency-dot"></div>
@@ -929,22 +910,6 @@ document.querySelectorAll('.pain-item, .transform-card, .week-row').forEach((el,
   el.dataset.delay = i * 80;
   observer.observe(el);
 });
-
-function handleSignup() {
-  const input = document.querySelector('.signup-input');
-  const email = input.value.trim();
-  if (!email || !email.includes('@')) {
-    input.style.borderColor = 'rgba(255,100,100,0.5)';
-    input.focus();
-    return;
-  }
-  const btn = document.querySelector('.btn-signup');
-  btn.textContent = '✓ Oled sees! Kontrolli oma e-maili.';
-  btn.style.background = 'rgba(232,196,196,0.9)';
-  btn.style.color = '#5C2D35';
-  btn.disabled = true;
-  input.disabled = true;
-}
 
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
